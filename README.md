@@ -1,56 +1,41 @@
-# checkpoint_bdd
+# Checkpoint - Base de données
 
-Base de données (SQL)
+## Préparation
 
-Dans cet exercice il s'agira d'abord de modéliser puis de créer la base de données d'un job
-board.
+Afin de réaliser ce checkpoint, tu dois cloner ce repository, naviguer dans le dossier cloné puis l'ouvrir avec ton IDE préféré.
 
-Un job board est un site internet qui permet aux entreprises de publier des offres d'emploi.
+Installe ensuite les dépendances avec :
 
-Voici les contraintes de la base de données du job board :
-- un recruteur peut s'enregistrer sur le site,
-- une fois enregistré il peut créer une seule entreprise,
-- il peut ensuite publier des offres au nom de l'entreprise,
-- un candidat peut s'enregistrer sur le site,
-- une fois enregistré il peut consulter les offres,
-- il peut ensuite candidater à des offres,
-- le candidat peut retrouver toutes les entreprises auxquelles il a candidaté,
-- le recruteur peut retrouver les informations des candidats qui ont postulé à une offre.
+```
+npm i
+```
 
-Un recruteur a les attributs suivants :
-- login
-- mot de passe
+## Lancer l'app
 
-Un candidat a les attributs suivants :
-- login
-- mot de passe
-- nom
-- prénom
-- email
-- numéro de téléphone
-- texte de présentation
+Tu peux ensuite lancer l'application avec la commande :
 
-Une entreprise a les attributs suivants :
-- nom
-- description
+```
+npm run watch
+```
 
-Une offre a les attributs suivants :
-- titre du poste
-- descriptif du poste
-- ville du poste
+## Écrire ses requêtes
 
-Modélisation
-Modélise le MPD de la base de données, https://www.dbdesigner.net/ te permettra d'exporter le
-schéma de base de données au format SQLite. Le contenu de ce fichier devra être utilisé dans
-la partie suivante.
-SQL
-Clone et installe ce projet qui te permettra de créer une BDD à partir du schema exporté depuis
-dbdesigner: https://github.com/aleygues/wns-db-checkpoint
-Écris ensuite les requêtes SQL permettant d'obtenir les données suivantes :
-- toutes les offres d'emploi,
-- toutes les offres d'emploi d'une ville (Paris),
-- les informations de tous les candidats qui ont postulé à une offre précise.
-Les informations de tous les candidats qui ont postulé aux offres d'une entreprise
-et de modifier les données suivantes :
-- modifier le numéro de téléphone et le texte de présentation d'un candidat,
-- supprimer toutes les offres d'une entreprise.
+Enfin, pour tester tes requêtes, navigue dans le dossier `./queries` et regarde les fichiers qui se terminent par `.sql`.
+
+Au début, ils ne comportent qu'un commentaire SQL avec la consigne, à toi de les remplir avec la requête SQL adéquate. Sauvearde le fichier SQL, et l'application devrait automatiquement se relancer et exécuter ta requête.
+
+**Note 1 :** les fichiers SQL sont pensés pour être remplis un à un, en commençant par la construction du schéma de base de données, grâce au fichier exporté de DBDesigner et dont le contenu est copié/collé dans `./queries/0_create_database.sql`.
+
+**Note 2 :** à chaque fois que tu enregistres un fichier SQL, l'app est relancée et commence systématiquement par détruire la BDD si elle existe, puis exécute tes fichiers SQL. Il n'y a donc pas de persistence des données d'une exécution à l'autre, pour avoir tes données, tu dois bien remplir le fichier `./queries/1_insert_data.sql`.
+
+**Note 3 :** les commentaires (lignes qui commencent par # dans tes fichiers SQL) sont automatiquement ignorés. Tes requêtes SQL doivent **obligatoirement** se terminer par des `;` pour bien être exécutées. Un fichier peut contenir aucune, une ou plusieurs requêtes.
+
+## Optionnel : pousser sur ton repo
+
+Si tu le souhaite, n'hésite pas à pousser tes fichiers sur un repo perso ! Pour cela, je te conseille de :
+
+- supprimer le dossier `.git` du dossier de travail,
+- créer sur Github ton nouveau repo, et en récupérer l'adresse (SSH si possible),
+- initier un nouveau repo git dans ton dossier avec `git init`,
+- ajouter l'adresse de ton repose avec `git remote add origin {{REPO_SSH}}`,
+- et enfin d'ajouter, valider et pousser tes changements dessus !
