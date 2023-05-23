@@ -11,10 +11,10 @@ VALUES ('Dev', 'FullStack', 'Paris'),
        ('Dev', 'Front', 'Bordeaux'),
        ('Dev', 'Back', 'Lille');
 
-INSERT INTO Candidate (login, password, name, firstname, email, phone, presentation)
-VALUES ('Grisch', 'Password', 'Gorski', 'Grischka', 'grisch.dev@gmail.com', '0601020304', 'Dev junior'),
-       ('El Simonio', 'MdP', 'Thore', 'Simon', 'simon.thore@gmail.com', '0601020304', 'Baby Dev'),
-       ("L'arsouille", 'MotDePasse', 'Deleau', 'François', 'delabierepasdeleau@gmail.com', '0601020304', 'Fou Dev');
+INSERT INTO Candidate (login, password, name, firstname, email, phone, presentation, job_offer_id)
+VALUES ('Grisch', 'Password', 'Gorski', 'Grischka', 'grisch.dev@gmail.com', '0601020304', 'Dev junior', 1),
+       ('El Simonio', 'MdP', 'Thore', 'Simon', 'simon.thore@gmail.com', '0601020304', 'Baby Dev', null),
+       ("L'arsouille", 'MotDePasse', 'Deleau', 'François', 'delabierepasdeleau@gmail.com', '0601020304', 'Fou Dev', null);
 
 SELECT *
 FROM Company;
