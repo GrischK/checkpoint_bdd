@@ -39,7 +39,8 @@ CREATE TABLE Job_offer
     description text,
     city         string,
     candidate_id integer,
-    company_id   integer
+    company_id   integer,
+    FOREIGN KEY (company_id) REFERENCES Company(id)
 );
 
 
