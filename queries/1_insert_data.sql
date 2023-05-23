@@ -6,10 +6,10 @@ INSERT INTO Company (name, description)
 VALUES ('PROBTP', 'Assurance'),
        ('Crédit Agricole', 'Banque');
 
-INSERT INTO Job_offer (title, description, city)
-VALUES ('Dev', 'FullStack', 'Paris'),
-       ('Dev', 'Front', 'Bordeaux'),
-       ('Dev', 'Back', 'Lille');
+INSERT INTO Job_offer (title, description, city, company_id)
+VALUES ('Dev', 'FullStack', 'Paris', 2),
+       ('Dev', 'Front', 'Bordeaux', 1),
+       ('Dev', 'Back', 'Lille', 1);
 
 INSERT INTO Candidate (login, password, name, firstname, email, phone, presentation, job_offer_id)
 VALUES ('Grisch', 'Password', 'Gorski', 'Grischka', 'grisch.dev@gmail.com', '0601020304', 'Dev junior', 1),

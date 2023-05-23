@@ -28,7 +28,8 @@ CREATE TABLE Company
     id           integer PRIMARY KEY AUTOINCREMENT,
     recruiter_id integer,
     name         string,
-    description text
+    description text,
+    job_offer_id integer
 );
 
 CREATE TABLE Job_offer
@@ -37,5 +38,8 @@ CREATE TABLE Job_offer
     title        string,
     description text,
     city         string,
-    candidate_id integer
+    candidate_id integer,
+    company_id   integer
 );
+
+
